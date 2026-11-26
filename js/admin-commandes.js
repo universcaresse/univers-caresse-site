@@ -3,9 +3,10 @@
    Créé le 4 mai 2026 selon LOGIQUE-VENTES.md
    ═══════════════════════════════════════ */
 
-// Code postal de l'atelier — sert à mesurer la distance depuis la fiche d'une commande.
-// Si l'atelier déménage, c'est ici qu'on le change.
-var ORIGINE_POSTALE = '***retiré***';
+// Code postal de l'atelier — sert à mesurer la distance depuis la fiche d'une commande. Il vient du serveur
+// (le réglage caché POSTECANADA_ORIGINE, le même que Poste Canada), jamais écrit ici : ce fichier est public
+// (26 nov. 2026). Sans lui, la carte part de l'endroit où l'on est.
+var ORIGINE_POSTALE = '';
 
 // ─── ÉTAT GLOBAL ───
 var cmdLignes          = [];
@@ -580,6 +581,7 @@ async function voirDetailCommande(cmd_id) {
     appelAPI('getLotsDisponibles')
   ]);
   cacherChargement();
+  if (resEntete && resEntete.origine) ORIGINE_POSTALE = resEntete.origine;
 
   if (!resEntete || !resEntete.success || !resLignes || !resLignes.success) {
     afficherMsg('commandes', '❌ ' + (((resEntete && !resEntete.success ? resEntete : resLignes) && (resEntete && !resEntete.success ? resEntete : resLignes).message) || 'Erreur de chargement.'), 'erreur');
