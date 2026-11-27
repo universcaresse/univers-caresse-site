@@ -4,5 +4,5 @@
 
 **Les règles de travail, les notes et le serveur sont dans le dépôt PRIVÉ `universcaresse/univers-caresse-serveur`.**
 Avant de répondre ou de coder :
-1. S'assurer que la séance a aussi le dépôt `universcaresse/univers-caresse-serveur` (sinon l'ajouter).
+1. S'assurer que la séance a aussi le dépôt `universcaresse/univers-caresse-serveur` et le dépôt `ngjcpvino/commun` (les règles communes aux quatre projets; sinon l'ajouter, ou le dire dès le premier message).
 2. Lire son `CLAUDE.md`, puis `notes/REFERENCE.md` et `notes/ETAT.md`, en entier.
